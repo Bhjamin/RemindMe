@@ -309,8 +309,6 @@ const Main = () => {
 
     useEffect(() => {
 
-        getData()
-
         const generatedSquares = Array(window.innerWidth < 768 ? 15 : 50).fill("");
 
         setSquares(generatedSquares.map((square, i) => {
@@ -333,6 +331,12 @@ const Main = () => {
                 ></motion.div>
             );
         }))
+
+    }, [])
+
+    useEffect(() => {
+
+        getData()
 
     }, [])
 
