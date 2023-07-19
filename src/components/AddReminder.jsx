@@ -1,19 +1,9 @@
 import { useState } from "react"
-import axios from "axios"
 
 
 const AddReminder = ({ addReminder }) => {
 
     const [input, setInput] = useState('')
-
-    const bengHandler = () => {
-
-        axios.get('https://remindme-beng.netlify.app/.netlify/functions/sendReminder-background')
-        .then((res) => {
-            console.log("big hitta 2 response", res.data)
-        })
-
-    }
 
     return (
         <div className="p-6 bg-base-300/20 shadow-xl z-30 backdrop-blur rounded-xl md:w-[25%] flex flex-col items-center gap-6">
@@ -26,10 +16,6 @@ const AddReminder = ({ addReminder }) => {
                 addReminder(input)
                 setInput('')
             }} className="w-1/3 h-6 bg-accent rounded-lg transition-all hover:shadow-black hover:shadow-md hover:scale-105 active:scale-100 active:shadow-none">Add</button>
-
-            <button onClick={bengHandler}>
-                Dont preg
-            </button>
 
         </div>
     )
