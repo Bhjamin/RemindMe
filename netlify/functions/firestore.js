@@ -27,49 +27,49 @@ const handler = async (event, context) => {
 
             console.log('passed if')
 
-            // if (task5.stringValue && !task5complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task5.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .done()
-            // }
+            if (task5.stringValue && !task5complete.booleanValue) {
+                client.messages
+                    .create({
+                        body: `${task5.stringValue} has not been done yet`,
+                        from: "+18668219659",
+                        to: "+14805491152",
+                    })
+                    .then((message) => console.log("hit", message.sid))
+                    .done()
+            }
 
-            // if (task4.stringValue && !task4complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task4.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .done()
-            // }
+            if (task4.stringValue && !task4complete.booleanValue) {
+                client.messages
+                    .create({
+                        body: `${task4.stringValue} has not been done yet`,
+                        from: "+18668219659",
+                        to: "+14805491152",
+                    })
+                    .then((message) => console.log("hit", message.sid))
+                    .done()
+            }
 
-            // if (task3.stringValue && !task3complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task3.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .done()
-            // }
+            if (task3.stringValue && !task3complete.booleanValue) {
+                client.messages
+                    .create({
+                        body: `${task3.stringValue} has not been done yet`,
+                        from: "+18668219659",
+                        to: "+14805491152",
+                    })
+                    .then((message) => console.log("hit", message.sid))
+                    .done()
+            }
 
-            // if (task2.stringValue && !task2complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task2.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .done()
-            // }
+            if (task2.stringValue && !task2complete.booleanValue) {
+                client.messages
+                    .create({
+                        body: `${task2.stringValue} has not been done yet`,
+                        from: "+18668219659",
+                        to: "+14805491152",
+                    })
+                    .then((message) => console.log("hit", message.sid))
+                    .done()
+            }
 
             if (!task1complete.booleanValue) {
 
@@ -81,6 +81,8 @@ const handler = async (event, context) => {
                         from: "+18668219659",
                         to: "+14805491152",
                     })
+                    .then((message) => console.log("hit", message.sid))
+                    .catch(err => console.log(err))
             }
         }
 
@@ -93,4 +95,4 @@ const handler = async (event, context) => {
     };
 };
 
-exports.handler = schedule("*/2 * * * *", handler)
+// exports.handler = schedule("*/2 * * * *", handler)
