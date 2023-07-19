@@ -20,7 +20,7 @@ const handler = async (event, context) => {
 
         console.log(filteredData[0]);
 
-        const {date, task1complete, task2, task2complete, task3, task3complete, task4, task4complete, task5, task5complete} = filteredData[0]
+        const {task1complete, task2, task2complete, task3, task3complete, task4, task4complete, task5, task5complete} = filteredData[0]
 
         let today = new Date();
 
