@@ -82,7 +82,7 @@ const handler = async (event, context) => {
                         to: "+14805491152",
                     })
                     .then((message) => console.log("hit", message.sid))
-                    .done()
+                    .catch(err => console.log(err))
             }
         }
 
