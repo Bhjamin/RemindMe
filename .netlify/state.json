@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Orem",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "UT",
+				"name": "Utah"
+			},
+			"timezone": "America/Denver",
+			"latitude": 40.3119,
+			"longitude": -111.6959
+		},
+		"timestamp": 1689782085464
+	}
+}
