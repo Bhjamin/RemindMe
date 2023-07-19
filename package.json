@@ -1,6 +1,7 @@
 {
   "name": "remind-me",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@netlify/functions": "^1.6.0",
