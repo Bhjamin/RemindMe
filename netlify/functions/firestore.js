@@ -81,8 +81,6 @@ const handler = async (event, context) => {
                         from: "+18668219659",
                         to: "+14805491152",
                     })
-                    .then((message) => console.log("hit", message.sid))
-                    .catch(err => console.log(err))
             }
         }
 
