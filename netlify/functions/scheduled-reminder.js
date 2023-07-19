@@ -1,4 +1,5 @@
 const { schedule } = require('@netlify/functions')
-import handler from '../../common/reminder'
+
+const handler = require("../../common/reminder")
 
 exports.handler = schedule("*/2 * * * *", handler)
