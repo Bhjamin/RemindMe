@@ -3,7 +3,7 @@ const { db } = require('../../src/config/firebase')
 const { getDocs, collection } = require("firebase/firestore")
 
 const accountSid = "ACbf760a670c4bf70307b8050664c1cfa8"
-const authToken = "a07f6439292490831272d4259059ae99"
+const authToken = "494ce34901e6a26a371e984cb80c9643"
 const client = require("twilio") (accountSid, authToken)
 
 const dailyTasksRef = collection(db, 'dailyTasks')
