@@ -1,12 +1,8 @@
 const { schedule } = require('@netlify/functions')
 
-const { db } = require("../../common/db")
-
-const { getDocs, collection } = require("firebase/firestore")
+const { getDocs, dailyTasksRef } = require("../../common/db")
 
 const { client } = require("../../common/twilio")
-
-const dailyTasksRef = collection(db, 'dailyTasks')
 
 const handler = async (event, context) => {
 
@@ -24,7 +20,11 @@ const handler = async (event, context) => {
 
         let today = new Date();
 
+        console.log("Above da if gaytment")
+
         if (today.getHours() >= 8) {
+
+            console.log('BENG BENGENBENBNG')
 
             // if (task5 && !task5complete) {
             //     client.messages
