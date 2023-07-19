@@ -26,49 +26,49 @@ const handler = async (event, context) => {
 
         if (today.getHours() >= 8) {
 
-            if (task5 && !task5complete) {
-                client.messages
-                    .create({
-                        body: `${task5} has not been done yet`,
-                        from: "+18668219659",
-                        to: "+14805491152",
-                    })
-                    .then((message) => console.log("hit", message.sid))
-                    .done()
-            }
+            // if (task5 && !task5complete) {
+            //     client.messages
+            //         .create({
+            //             body: `${task5} has not been done yet`,
+            //             from: "+18668219659",
+            //             to: "+14805491152",
+            //         })
+            //         .then((message) => console.log("hit", message.sid))
+            //         .done()
+            // }
 
-            if (task4 && !task4complete) {
-                client.messages
-                    .create({
-                        body: `${task4} has not been done yet`,
-                        from: "+18668219659",
-                        to: "+14805491152",
-                    })
-                    .then((message) => console.log("hit", message.sid))
-                    .done()
-            }
+            // if (task4 && !task4complete) {
+            //     client.messages
+            //         .create({
+            //             body: `${task4} has not been done yet`,
+            //             from: "+18668219659",
+            //             to: "+14805491152",
+            //         })
+            //         .then((message) => console.log("hit", message.sid))
+            //         .done()
+            // }
 
-            if (task3 && !task3complete) {
-                client.messages
-                    .create({
-                        body: `${task3} has not been done yet`,
-                        from: "+18668219659",
-                        to: "+14805491152",
-                    })
-                    .then((message) => console.log("hit", message.sid))
-                    .done()
-            }
+            // if (task3 && !task3complete) {
+            //     client.messages
+            //         .create({
+            //             body: `${task3} has not been done yet`,
+            //             from: "+18668219659",
+            //             to: "+14805491152",
+            //         })
+            //         .then((message) => console.log("hit", message.sid))
+            //         .done()
+            // }
 
-            if (task2 && !task2complete) {
-                client.messages
-                    .create({
-                        body: `${task2} has not been done yet`,
-                        from: "+18668219659",
-                        to: "+14805491152",
-                    })
-                    .then((message) => console.log("hit", message.sid))
-                    .done()
-            }
+            // if (task2 && !task2complete) {
+            //     client.messages
+            //         .create({
+            //             body: `${task2} has not been done yet`,
+            //             from: "+18668219659",
+            //             to: "+14805491152",
+            //         })
+            //         .then((message) => console.log("hit", message.sid))
+            //         .done()
+            // }
 
             if (!task1complete) {
                 client.messages
