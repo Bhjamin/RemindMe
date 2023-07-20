@@ -3,11 +3,16 @@ const axios = require('axios')
 
 const handler = async (event, context) => {
 
-axios.get('https://remindme-beng.netlify.app/api/sendReminder')
-.then((res) => {
-    console.log(res.data)
-})
+     try {
+
+         axios.get('https://remindme-beng.netlify.app/api/sendReminder')
+         .then((res) => {
+             console.log(res.data)
+            })
+        } catch (err) {
+            console.log(err)
+        }
     
 }
 
-exports.handler = schedule("*/2 * * * *", handler)
+exports.handler = schedule("*/1 * * * *", handler)
