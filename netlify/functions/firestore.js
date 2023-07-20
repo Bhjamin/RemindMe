@@ -3,11 +3,14 @@ const axios = require('axios')
 
 const handler = async (event, context) => {
 
-
-    await axios.get('https://remindme-beng.netlify.app/api/sendReminder')
-        .then((res) => {
-            console.log(res.data)
-        })
+    try {
+        await axios.get('https://remindme-beng.netlify.app/api/sendReminder')
+            .then((res) => {
+                console.log(res.data)
+            })
+    } catch (err) {
+        console.log(err)
+    }
 
 
 }
