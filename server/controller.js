@@ -92,10 +92,8 @@ module.exports = {
                         message: 'Hello beng',
                         key: 'textbelt',
                     }),
-                }).then(response => {
-                    return response.json();
-                }).then(data => {
-                    console.log(data);
+                }).then(res => {
+                    console.log(res.data)
                 });
 
 
