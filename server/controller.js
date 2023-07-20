@@ -24,7 +24,7 @@ module.exports = {
     
             let today = new Date();
     
-            if (today.getHours() >= 8) {
+            if (today.getHours() >= 19) {
     
                 if (task5.stringValue && !task5complete.booleanValue) {
                     client.messages
