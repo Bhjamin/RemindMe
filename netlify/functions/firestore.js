@@ -13,109 +13,95 @@ const docRef = firestore.collection('dailyTasks').doc('tasks')
 
 const handler = async (event, context) => {
 
-        // axios.get('https://remindme-beng.netlify.app/.netlify/functions/api/sendReminder')
-        // .then((res) => {
-        //     console.log(res.data)
-        // })
+    const data = await docRef.get()
 
-        const data = await docRef.get()
+    console.log("hit", data._fieldsProto)
 
-        console.log("hit", data._fieldsProto)
+    const { task1complete, task2, task2complete, task3, task3complete, task4, task4complete, task5, task5complete } = data._fieldsProto
 
-        const { task1complete, task2, task2complete, task3, task3complete, task4, task4complete, task5, task5complete } = data._fieldsProto
+    const vonage = new Vonage({
+        apiKey: "84b6fed3",
+        apiSecret: "HtPnQEaVrO5aXdRe"
+    })
 
-        let today = new Date();
+    if (task5.stringValue && !task5complete.booleanValue) {
+        const from = "18722550122"
+        const to = "14805491152"
+        const text = `${task5.stringValue} has not been done yet`
 
-        if (today.getHours() >= 23) {
+        async function sendSMS() {
+            await vonage.sms.send({ to, from, text })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        }
 
-            // if (task5.stringValue && !task5complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task5.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .catch(err => console.log(err))
-            // }
+        sendSMS();
+    }
 
-            // if (task4.stringValue && !task4complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task4.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .catch(err => console.log(err))
-            // }
+    if (task4.stringValue && !task4complete.booleanValue) {
+        const from = "18722550122"
+        const to = "14805491152"
+        const text = `${task4.stringValue} has not been done yet`
 
-            // if (task3.stringValue && !task3complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task3.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .catch(err => console.log(err))
-            // }
+        async function sendSMS() {
+            await vonage.sms.send({ to, from, text })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        }
 
-            // if (task2.stringValue && !task2complete.booleanValue) {
-            //     client.messages
-            //         .create({
-            //             body: `${task2.stringValue} has not been done yet`,
-            //             from: "+18668219659",
-            //             to: "+14805491152",
-            //         })
-            //         .then((message) => console.log("hit", message.sid))
-            //         .catch(err => console.log(err))
-            // }
+        sendSMS();
+    }
 
-            if (!task1complete.booleanValue) {
+    if (task3.stringValue && !task3complete.booleanValue) {
+        const from = "18722550122"
+        const to = "14805491152"
+        const text = `${task3.stringValue} has not been done yet`
 
-                // client.messages
-                //     .create({
-                //         body: `You have not worked out today`,
-                //         from: "+18668219659",
-                //         to: "+14805491152",
-                //     })
-                //     .then((message) => console.log("hit", message.sid))
-                //     .catch(err => console.log(err))
+        async function sendSMS() {
+            await vonage.sms.send({ to, from, text })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        }
 
-                console.log("HIT TEXT")
+        sendSMS();
+    }
 
-                const vonage = new Vonage({
-                    apiKey: "84b6fed3",
-                    apiSecret: "HtPnQEaVrO5aXdRe"
-                })
+    if (task2.stringValue && !task2complete.booleanValue) {
 
-                const time = new Date()
+        const from = "18722550122"
+        const to = "14805491152"
+        const text = `${task2.stringValue} has not been done yet`
 
-                console.log(time.getHours())
+        async function sendSMS() {
+            await vonage.sms.send({ to, from, text })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        }
 
-                const from = "18722550122"
-                const to = "14805491152"
-                const text = `Bello Beng, at past 7`
+        sendSMS();
 
-                async function sendSMS() {
-                    await vonage.sms.send({ to, from, text })
-                        .then(resp => { console.log('Message sent successfully'); console.log(resp); })
-                        .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
-                }
+    }
 
-                sendSMS();
+        if (!task1complete.booleanValue) {
 
+            const from = "18722550122"
+            const to = "14805491152"
+            const text = `You haven't worked out yet today, wtf bro`
 
+            async function sendSMS() {
+                await vonage.sms.send({ to, from, text })
+                    .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                    .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
             }
+
+            sendSMS();
+
         }
 
         return {
             statusCode: 200,
         };
 
-}
+    }
 
-exports.handler = schedule("*/1 * * * *", handler)
-
-// "*/2 19-22 * * *"
+    exports.handler = schedule("*/2 17 * * *", handler)
