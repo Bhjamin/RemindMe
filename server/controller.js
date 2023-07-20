@@ -82,6 +82,8 @@ module.exports = {
                 //     .then((message) => console.log("hit", message.sid))
                 //     .catch(err => console.log(err))
 
+                console.log("HIT TEXT")
+
                 axios('https://textbelt.com/text', {
                     method: 'post',
                     headers: { 'Content-Type': 'application/json' },
