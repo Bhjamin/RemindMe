@@ -92,6 +92,8 @@ const handler = async (event, context) => {
 
                 const time = new Date()
 
+                console.log(time.getHours())
+
                 const from = "18722550122"
                 const to = "14805491152"
                 const text = `Bello Beng, at past 7`
