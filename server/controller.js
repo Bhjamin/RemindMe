@@ -7,7 +7,7 @@ admin.initializeApp({projectId: 'dailyreminders-62630', credential: admin.creden
 const firestore = admin.firestore();
 
 const accountSid = "ACbf760a670c4bf70307b8050664c1cfa8"
-const authToken = "494ce34901e6a26a371e984cb80c9643"
+const authToken = "58eb3774b93fed3abbfa656bedbdff56"
 const client = require("twilio")(accountSid, authToken)
 
 const docRef = firestore.collection('dailyTasks').doc('tasks')
