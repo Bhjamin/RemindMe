@@ -90,9 +90,11 @@ module.exports = {
                     apiSecret: "HtPnQEaVrO5aXdRe"
                 })
 
+                const time = new Date()
+
                 const from = "18722550122"
                 const to = "14805491152"
-                const text = 'Beelo Bemg'
+                const text = `Bello Beng, at ${time.getHours()} ${time.getSeconds()}`
 
                 async function sendSMS() {
                     await vonage.sms.send({ to, from, text })
