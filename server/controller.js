@@ -12,7 +12,7 @@ const docRef = firestore.collection('dailyTasks').doc('tasks')
 
 module.exports = {
 
-    handler: async (req, res) => {
+    handleReminder: async (req, res) => {
 
         try {
             const data = await docRef.get()
