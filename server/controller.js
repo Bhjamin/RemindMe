@@ -1,6 +1,7 @@
 const admin = require('firebase-admin')
 const functions = require('firebase-functions')
 const serviceAccount = require('../serviceAccountKey.json')
+const text = require('textbelt')
 import axios from 'axios';
 
 admin.initializeApp({ projectId: 'dailyreminders-62630', credential: admin.credential.cert(serviceAccount) }, functions.config().firebase);
