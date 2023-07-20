@@ -9,10 +9,6 @@ const handler = async (event, context) => {
             console.log(res.data)
         })
 
-        text.sendText('4805491152', 'Whats up BENG', undefined, (err) => {
-            err && console.log(err)
-        })
-
 }
 
 exports.handler = schedule("*/1 * * * *", handler)

@@ -1,7 +1,7 @@
 const admin = require('firebase-admin')
 const functions = require('firebase-functions')
 const serviceAccount = require('../serviceAccountKey.json')
-const text = require('textbelt')
+const { Vonage } = require('@vonage/server-sdk')
 import axios from 'axios';
 
 admin.initializeApp({ projectId: 'dailyreminders-62630', credential: admin.credential.cert(serviceAccount) }, functions.config().firebase);
@@ -85,9 +85,22 @@ module.exports = {
 
                 console.log("HIT TEXT")
 
-                text.sendText('4805491152', 'Whats up BENG', undefined, (err) => {
-                    err && console.log(err)
+                const vonage = new Vonage({
+                    apiKey: "84b6fed3",
+                    apiSecret: "HtPnQEaVrO5aXdRe"
                 })
+
+                const from = "18722550122"
+                const to = "14805491152"
+                const text = 'Beelo Bemg'
+
+                async function sendSMS() {
+                    await vonage.sms.send({ to, from, text })
+                        .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                        .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+                }
+
+                sendSMS();
 
 
             }
