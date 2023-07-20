@@ -6,7 +6,12 @@ const api = express()
 
 const router = Router()
 
-router.get('/sendReminder', handleReminder)
+router.get('/sendReminder', (req, res) => {
+
+    console.log("HIT JIT")
+    handleReminder()
+
+})
 
 api.use('/api/', router)
 
