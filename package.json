@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "yarn node server/server.js"
+    "postinstall": "yarn node server/server.js && yarn run build"
   },
   "eslintConfig": {
     "extends": [
