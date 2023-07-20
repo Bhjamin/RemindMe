@@ -16,7 +16,6 @@ module.exports = {
 
     handleReminder: async (req, res) => {
 
-        try {
             const data = await docRef.get()
     
             console.log("hit", data._fieldsProto)
@@ -85,10 +84,6 @@ module.exports = {
                         .catch(err => console.log(err))
                 }
             }
-    
-        } catch (err) {
-            console.log(err);
-        }
     
         return {
             statusCode: 200,
