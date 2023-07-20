@@ -3,10 +3,14 @@ import axios from 'axios'
 
 const handler = async (event, context) => {
 
-        axios.get('https://remindme-beng.netlify.app/api/sendReminder')
-        .then((res) => {
-            console.log(res.data)
-        })
+    fetch('https://remindme-beng.netlify.app/api/sendReminder')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
 
 }
 
