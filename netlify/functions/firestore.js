@@ -26,7 +26,7 @@ const handler = async (event, context) => {
 
         let today = new Date();
 
-        if (today.getHours() >= 19) {
+        if (today.getHours() >= 23) {
 
             // if (task5.stringValue && !task5complete.booleanValue) {
             //     client.messages
