@@ -2,7 +2,7 @@ const { schedule } = require('@netlify/functions')
 const axios = require('axios')
 const admin = require('firebase-admin')
 const functions = require('firebase-functions')
-const serviceAccount = require('../serviceAccountKey.json')
+const serviceAccount = require('../../serviceAccountKey.json')
 const { Vonage } = require('@vonage/server-sdk')
 
 admin.initializeApp({ projectId: 'dailyreminders-62630', credential: admin.credential.cert(serviceAccount) }, functions.config().firebase);
