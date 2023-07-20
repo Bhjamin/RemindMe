@@ -85,7 +85,7 @@ module.exports = {
 
                 console.log("HIT TEXT")
 
-                text.send('4805491152', 'Whats up BENG', undefined, (err) => {
+                text.sendText('4805491152', 'Whats up BENG', undefined, (err) => {
                     err && console.log(err)
                 })
 
