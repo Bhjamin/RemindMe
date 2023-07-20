@@ -34,7 +34,7 @@ module.exports = {
                             to: "+14805491152",
                         })
                         .then((message) => console.log("hit", message.sid))
-                        .done()
+                        .catch(err => console.log(err))
                 }
     
                 if (task4.stringValue && !task4complete.booleanValue) {
@@ -45,7 +45,7 @@ module.exports = {
                             to: "+14805491152",
                         })
                         .then((message) => console.log("hit", message.sid))
-                        .done()
+                        .catch(err => console.log(err))
                 }
     
                 if (task3.stringValue && !task3complete.booleanValue) {
@@ -56,7 +56,7 @@ module.exports = {
                             to: "+14805491152",
                         })
                         .then((message) => console.log("hit", message.sid))
-                        .done()
+                        .catch(err => console.log(err))
                 }
     
                 if (task2.stringValue && !task2complete.booleanValue) {
@@ -67,7 +67,7 @@ module.exports = {
                             to: "+14805491152",
                         })
                         .then((message) => console.log("hit", message.sid))
-                        .done()
+                        .catch(err => console.log(err))
                 }
     
                 if (!task1complete.booleanValue) {
