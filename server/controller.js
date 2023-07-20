@@ -84,17 +84,9 @@ module.exports = {
 
                 console.log("HIT TEXT")
 
-                axios('https://textbelt.com/text', {
-                    method: 'post',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        phone: '4805491152',
-                        message: 'Hello beng',
-                        key: 'textbelt',
-                    }),
-                }).then(res => {
-                    console.log(res.data)
-                });
+                text.send('4805491152', 'Whats up BENG', undefined, (err) => {
+                    err && console.log(err)
+                })
 
 
             }
