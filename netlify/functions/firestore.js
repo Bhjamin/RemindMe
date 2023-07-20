@@ -26,7 +26,7 @@ const handler = async (event, context) => {
 
         let today = new Date();
 
-        if (today.getHours() >= 19) {
+        if (today.getHours() === 19) {
 
             // if (task5.stringValue && !task5complete.booleanValue) {
             //     client.messages
@@ -94,7 +94,7 @@ const handler = async (event, context) => {
 
                 const from = "18722550122"
                 const to = "14805491152"
-                const text = `Bello Beng, at past 7}`
+                const text = `Bello Beng, at past 7`
 
                 async function sendSMS() {
                     await vonage.sms.send({ to, from, text })
@@ -106,6 +106,8 @@ const handler = async (event, context) => {
 
 
             }
+        } else {
+            console.log('Its not 7 yet')
         }
 
         return {
