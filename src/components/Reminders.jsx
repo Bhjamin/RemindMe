@@ -36,7 +36,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
     ];
 
     return (
-        <div className="p-8 bg-base-300/20 shadow-xl z-30 backdrop-blur rounded-xl w-[90%] md:w-[65%] flex flex-row justify-center flex-wrap gap-12 ">
+        <div className="p-8 bg-base-300/20 shadow-xl z-30 backdrop-blur rounded-xl w-[90%] md:w-[65%] flex flex-row justify-center flex-wrap gap-12 overflow-x-hidden">
 
             <div className="flex items-center gap-4">
 
@@ -98,8 +98,8 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                     task2 ?
 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
-                            initial={{ height: 0, width: 0, opacity: 0 }}
-                            animate={{ height: 'auto', width: 'auto', opacity: 1 }}
+                            initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
+                            animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
                             exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -150,8 +150,8 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                     task3 ?
 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
-                        initial={{ height: 0, width: 0, opacity: 0 }}
-                        animate={{ height: 'auto', width: 'auto', opacity: 1 }}
+                        initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
+                        animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -202,8 +202,8 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                     task4 ?
 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
-                        initial={{ height: 0, width: 0, opacity: 0 }}
-                        animate={{ height: 'auto', width: 'auto', opacity: 1 }}
+                        initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
+                        animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -254,8 +254,8 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                     task5 ?
 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
-                        initial={{ height: 0, width: 0, opacity: 0 }}
-                        animate={{ height: 'auto', width: 'auto', opacity: 1 }}
+                        initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
+                        animate={{ height: 'auto', width: 'auto', opacity: 1., y: 0 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
