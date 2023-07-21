@@ -4,6 +4,7 @@ import AddReminder from "./AddReminder";
 import { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 import { getDocs, collection, updateDoc, doc } from "firebase/firestore"
+import bingus from '../assets/bingus.png'
 
 const Main = () => {
 
@@ -24,14 +25,16 @@ const Main = () => {
     const [squares, setSquares] = useState([])
 
     const getRandomColor = () => {
-        const randNum = Math.floor(Math.random() * 3)
+        const randNum = Math.floor(Math.random() * 4)
 
         if (randNum === 1) {
             return 'bg-primary'
         } else if (randNum === 2) {
             return 'bg-secondary'
-        } else {
+        } else if (randNum === 3) {
             return 'bg-accent'
+        } else {
+            return 'cat'
         }
 
     }
@@ -319,6 +322,7 @@ const Main = () => {
             const randomSize = Math.floor(Math.random() * 20) + 5
             const randomColor = getRandomColor()
             return (
+                randomColor !== 'cat' ?
                 <motion.div
                     style={{ width: `${randomSize}px`, height: `${randomSize}px` }}
                     key={i}
@@ -331,6 +335,20 @@ const Main = () => {
                     }}
                     transition={{ duration: `${randomSize}`, repeat: Infinity, delay: randomDelay }}
                 ></motion.div>
+                :
+                <motion.img
+                    style={{ width: `${randomSize}px`, height: `${randomSize}px` }}
+                    src={bingus}
+                    key={i}
+                    className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
+                    initial={{ y: 0, x: `${randX}vw`, opacity: 0 }}
+                    animate={{
+                        y: -window.innerHeight - 50,
+                        opacity: 0.75,
+                        rotate: randX < 40 ? -720 : 720
+                    }}
+                    transition={{ duration: `${randomSize}`, repeat: Infinity, delay: randomDelay }}
+                ></motion.img>
             );
         }))
 
