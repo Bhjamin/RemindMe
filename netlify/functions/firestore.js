@@ -36,9 +36,8 @@ const handler = async (event, context) => {
         }
 
         sendSMS();
-    }
+    } else if (task4.stringValue && !task4complete.booleanValue) {
 
-    if (task4.stringValue && !task4complete.booleanValue) {
         const from = "18722550122"
         const to = "14805491152"
         const text = `${task4.stringValue} has not been done yet`
@@ -50,9 +49,9 @@ const handler = async (event, context) => {
         }
 
         sendSMS();
-    }
+    } else if (task3.stringValue && !task3complete.booleanValue) {
 
-    if (task3.stringValue && !task3complete.booleanValue) {
+
         const from = "18722550122"
         const to = "14805491152"
         const text = `${task3.stringValue} has not been done yet`
@@ -64,9 +63,7 @@ const handler = async (event, context) => {
         }
 
         sendSMS();
-    }
-
-    if (task2.stringValue && !task2complete.booleanValue) {
+    } else if (task2.stringValue && !task2complete.booleanValue) {
 
         const from = "18722550122"
         const to = "14805491152"
@@ -80,28 +77,26 @@ const handler = async (event, context) => {
 
         sendSMS();
 
-    }
+    } else if (!task1complete.booleanValue) {
 
-        if (!task1complete.booleanValue) {
+        const from = "18722550122"
+        const to = "14805491152"
+        const text = `You haven't worked out yet today, wtf bro`
 
-            const from = "18722550122"
-            const to = "14805491152"
-            const text = `You haven't worked out yet today, wtf bro`
-
-            async function sendSMS() {
-                await vonage.sms.send({ to, from, text })
-                    .then(resp => { console.log('Message sent successfully'); console.log(resp); })
-                    .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
-            }
-
-            sendSMS();
-
+        async function sendSMS() {
+            await vonage.sms.send({ to, from, text })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
         }
 
-        return {
-            statusCode: 200,
-        };
+        sendSMS();
 
     }
 
-    exports.handler = schedule("*/2 1 * * *", handler)
+    return {
+        statusCode: 200,
+    };
+
+}
+
+exports.handler = schedule("*/2 1 * * *", handler)

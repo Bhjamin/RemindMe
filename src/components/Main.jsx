@@ -323,7 +323,7 @@ const Main = () => {
                     style={{ width: `${randomSize}px`, height: `${randomSize}px` }}
                     key={i}
                     className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
-                    initial={{ y: -10, x: `${randX}vw`, opacity: 0 }}
+                    initial={{ y: -75, x: `${randX}vw`, opacity: 0 }}
                     animate={{
                         y: -window.innerHeight - 50,
                         opacity: 0.75,
