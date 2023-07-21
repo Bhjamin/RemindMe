@@ -25,7 +25,7 @@ const Main = () => {
     const [squares, setSquares] = useState([])
 
     const getRandomColor = () => {
-        const randNum = Math.floor(Math.random() * 4)
+        const randNum = Math.floor(Math.random() * 7)
 
         if (randNum === 1) {
             return 'bg-primary'
@@ -33,10 +33,16 @@ const Main = () => {
             return 'bg-secondary'
         } else if (randNum === 3) {
             return 'bg-accent'
+        } else if (randNum === 4) {
+            return 'bg-secondary'
+        } else if (randNum === 5) {
+            return 'bg-primary'
+        } else if (randNum === 6) {
+            return 'bg-accent'
         } else {
             return 'cat'
         }
-
+            
     }
 
     const newReminderHandler = async (input) => {
@@ -337,7 +343,7 @@ const Main = () => {
                 ></motion.div>
                 :
                 <motion.img
-                    style={{ width: `${randomSize + 25}px`, height: `${randomSize + 25}px` }}
+                    style={{ width: `${randomSize + 30}px`, height: `${randomSize + 30}px` }}
                     src={bingus}
                     key={i}
                     className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
