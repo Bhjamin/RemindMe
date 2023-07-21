@@ -91,6 +91,18 @@ const handler = async (event, context) => {
 
         sendSMS();
 
+        const from2 = "18722550122"
+        const to2 = "13852447384"
+        const text2 = `Ben hasn't worked out yet today. Call him a bitch`
+
+        async function sendSMS2() {
+            await vonage.sms.send({ to2, from2, text2 })
+                .then(resp => { console.log('Message sent successfully'); console.log(resp); })
+                .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        }
+
+        sendSMS2();
+
     }
 
     return {

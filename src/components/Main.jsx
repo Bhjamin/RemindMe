@@ -323,7 +323,7 @@ const Main = () => {
         const generatedSquares = Array(window.innerWidth < 768 ? 15 : 50).fill("");
 
         setSquares(generatedSquares.map((square, i) => {
-            const randX = Math.floor(Math.random() * 95) + 4
+            const randX = Math.floor(Math.random() * 97)
             const randomDelay = (Math.floor(Math.random() * 75) + 1) / 5
             const randomSize = Math.floor(Math.random() * 20) + 5
             const randomColor = getRandomColor()
