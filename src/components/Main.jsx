@@ -337,7 +337,7 @@ const Main = () => {
                 ></motion.div>
                 :
                 <motion.img
-                    style={{ width: `${randomSize + 10}px`, height: `${randomSize + 10}px` }}
+                    style={{ width: `${randomSize + 25}px`, height: `${randomSize + 25}px` }}
                     src={bingus}
                     key={i}
                     className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
