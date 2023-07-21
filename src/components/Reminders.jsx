@@ -70,7 +70,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                 </button>
 
                 <div className="flex flex-col items-center">
-                    <h2 className={`text-xl md:text-3xl transition-all text-secondary ${task1complete && 'line-through'}`}>Workout</h2>
+                    <h2 className={`text-base sm:text-xl md:text-3xl transition-all text-secondary ${task1complete && 'line-through'}`}>Workout</h2>
                     {
                         workoutDay ?
                             <>
@@ -133,7 +133,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                             </button>
 
                             <div className="flex gap-2 items-center">
-                                <h2 className={`text-xl md:text-3xl transition-all ${task2complete && 'line-through'}`}>{task2}</h2>
+                                <h2 className={`text-base sm:text-xl md:text-3xl transition-all ${task2complete && 'line-through'}`}>{task2}</h2>
                                 <button onClick={deleteTask2Handler} className="w-4 h-4 p-1 border-2 border-black bg-red-600 flex items-center justify-center rounded-sm transition-all hover:scale-105 hover:shadow-md active:scale-95 active:shadow-none shadow-black">-</button>
                             </div>
 
@@ -185,7 +185,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                             </button>
 
                             <div className="flex gap-2 items-center">
-                                <h2 className={`text-xl md:text-3xl transition-all ${task3complete && 'line-through'}`}>{task3}</h2>
+                                <h2 className={`text-base sm:text-xl md:text-3xl transition-all ${task3complete && 'line-through'}`}>{task3}</h2>
                                 <button onClick={deleteTask3Handler} className="w-4 h-4 p-1 border-2 border-black bg-red-600 flex items-center justify-center rounded-sm transition-all hover:scale-105 hover:shadow-md active:scale-95 active:shadow-none shadow-black">-</button>
                             </div>
 
@@ -237,7 +237,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                             </button>
 
                             <div className="flex gap-2 items-center">
-                                <h2 className={`text-xl md:text-3xl transition-all ${task4complete && 'line-through'}`}>{task4}</h2>
+                                <h2 className={`text-base sm:text-xl md:text-3xl transition-all ${task4complete && 'line-through'}`}>{task4}</h2>
                                 <button onClick={deleteTask4Handler} className="w-4 h-4 p-1 border-2 border-black bg-red-600 flex items-center justify-center rounded-sm transition-all hover:scale-105 hover:shadow-md active:scale-95 active:shadow-none shadow-black">-</button>
                             </div>
 
@@ -289,7 +289,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                             </button>
 
                             <div className="flex gap-2 items-center">
-                                <h2 className={`text-xl md:text-3xl transition-all ${task5complete && 'line-through'}`}>{task5}</h2>
+                                <h2 className={` text-base sm:text-xl md:text-3xl transition-all ${task5complete && 'line-through'}`}>{task5}</h2>
                                 <button onClick={deleteTask5Handler} className="w-4 h-4 p-1 border-2 border-black bg-red-600 flex items-center justify-center rounded-sm transition-all hover:scale-105 hover:shadow-md active:scale-95 active:shadow-none shadow-black">-</button>
                             </div>
 
