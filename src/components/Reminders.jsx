@@ -100,6 +100,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
                             initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
                             animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
+                            transition={{ delay: .05 }}
                             exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -152,6 +153,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
                         initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
                         animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
+                        transition={{ delay: .1 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -204,6 +206,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
                         initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
                         animate={{ height: 'auto', width: 'auto', opacity: 1, y: 0 }}
+                        transition={{ delay: .15 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
@@ -256,6 +259,7 @@ const Reminders = ({ task1complete, task2, task2complete, task3, task3complete, 
                         <motion.section className="flex flex-row items-center overflow-hidden justify-center gap-4"
                         initial={{ height: 0, width: 0, opacity: 0, y: 100 }}
                         animate={{ height: 'auto', width: 'auto', opacity: 1., y: 0 }}
+                        transition={{ delay: .20 }}
                         exit={{ height: 0, width: 0, opacity: 0 }}
                         >
 
