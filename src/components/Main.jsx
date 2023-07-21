@@ -25,31 +25,22 @@ const Main = () => {
     const [squares, setSquares] = useState([])
 
     const getRandomColor = () => {
-        const randNum = Math.floor(Math.random() * 10)
+        const randNum = Math.floor(Math.random() * 3)
 
-        if (randNum === 1) {
-            return 'bg-primary'
-        } else if (randNum === 2) {
-            return 'bg-secondary'
-        } else if (randNum === 3) {
-            return 'bg-accent'
-        } else if (randNum === 4) {
-            return 'bg-secondary'
-        } else if (randNum === 5) {
-            return 'bg-primary'
-        } else if (randNum === 6) {
-            return 'bg-accent'
-        } else if (randNum === 7) {
-            return 'bg-secondary'
-        } else if (randNum === 8) {
-            return 'bg-primary'
-        } else if (randNum === 9) {
-            return 'bg-accent'
-        } else {
+        const catNum = Math.floor(Math.random() * 51)
+
+        if (catNum === 25){
             return 'cat'
         }
+
+        if (randNum === 0 && catNum !== 25) {
+            return 'bg-primary'
+        } else if (randNum === 1) {
+            return 'bg-secondary'
+        } else {
+            return 'bg-accent'
+        }
         
-            
     }
 
     const newReminderHandler = async (input) => {
@@ -330,7 +321,7 @@ const Main = () => {
         const generatedSquares = Array(window.innerWidth < 768 ? 15 : 50).fill("");
 
         setSquares(generatedSquares.map((square, i) => {
-            const randX = Math.floor(Math.random() * 97)
+            const randX = Math.floor(Math.random() * 96) + 2
             const randomDelay = (Math.floor(Math.random() * 75) + 1) / 5
             const randomSize = Math.floor(Math.random() * 20) + 5
             const randomColor = getRandomColor()
@@ -339,7 +330,7 @@ const Main = () => {
                 <motion.div
                     style={{ width: `${randomSize}px`, height: `${randomSize}px` }}
                     key={i}
-                    className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
+                    className={` z-[1] absolute rounded-sm bottom-0 ${randomColor} opacity-0`}
                     initial={{ y: 0, x: `${randX}vw`, opacity: 0 }}
                     animate={{
                         y: -window.innerHeight - 50,
@@ -350,7 +341,7 @@ const Main = () => {
                 ></motion.div>
                 :
                 <motion.img
-                    style={{ width: `${randomSize + 30}px`, height: `${randomSize + 30}px` }}
+                    style={{ width: `${randomSize + 75}px`, height: `${randomSize + 75}px` }}
                     src={bingus}
                     key={i}
                     className={` z-[1] absolute bottom-0 ${randomColor} opacity-0`}
@@ -358,9 +349,9 @@ const Main = () => {
                     animate={{
                         y: -window.innerHeight - 50,
                         opacity: 0.75,
-                        rotate: randX < 40 ? -720 : 720
+                        rotate: randX < 50 ? -720 : 720
                     }}
-                    transition={{ duration: `${randomSize}`, repeat: Infinity, delay: randomDelay }}
+                    transition={{ duration: `${randomSize + 5}`, repeat: Infinity, delay: randomDelay }}
                 ></motion.img>
             );
         }))
