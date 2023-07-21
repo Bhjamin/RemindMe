@@ -10,7 +10,7 @@ const AddReminder = ({ addReminder }) => {
 
             <h2 className=" text-xl md:text-3xl font-semibold text-primary">Add A Reminder</h2>
 
-            <input value={input} maxLength="10" onChange={(e) => setInput(e.target.value)} type="text" placeholder="type here..." className="p-1 bg-base-200/20 border-2 border-primary rounded-lg text-success w-[90%] md:w-[75%] text-center" />
+            <input value={input} maxLength="20" onChange={(e) => setInput(e.target.value)} type="text" placeholder="type here..." className="p-1 bg-base-200/20 border-2 border-primary rounded-lg text-success w-[90%] md:w-[75%] text-center" />
 
             <button onClick={() => {
                 addReminder(input)
