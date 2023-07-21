@@ -25,7 +25,7 @@ const Main = () => {
     const [squares, setSquares] = useState([])
 
     const getRandomColor = () => {
-        const randNum = Math.floor(Math.random() * 7)
+        const randNum = Math.floor(Math.random() * 10)
 
         if (randNum === 1) {
             return 'bg-primary'
@@ -39,9 +39,16 @@ const Main = () => {
             return 'bg-primary'
         } else if (randNum === 6) {
             return 'bg-accent'
+        } else if (randNum === 7) {
+            return 'bg-secondary'
+        } else if (randNum === 8) {
+            return 'bg-primary'
+        } else if (randNum === 9) {
+            return 'bg-accent'
         } else {
             return 'cat'
         }
+        
             
     }
 
