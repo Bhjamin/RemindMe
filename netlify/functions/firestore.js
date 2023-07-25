@@ -79,9 +79,9 @@ const handler = async (event, context) => {
 
     } else if (!task1complete.booleanValue) {
 
-        const from = "18722550122"
-        const to = "14805491152"
-        const text = `You haven't worked out yet today, wtf bro`
+        let from = "18722550122"
+        let to = "14805491152"
+        let text = `You haven't worked out yet today, wtf bro`
 
         async function sendSMS() {
             await vonage.sms.send({ to, from, text })
@@ -91,12 +91,12 @@ const handler = async (event, context) => {
 
         sendSMS();
 
-        const from2 = "18722550122"
-        const to2 = "13852447384"
-        const text2 = `Ben hasn't worked out yet today. Call him a bitch`
+        from = "18722550122"
+        to = "13852447384"
+        text = `Ben hasn't worked out yet today. Call him a bitch`
 
         async function sendSMS2() {
-            await vonage.sms.send({ to2, from2, text2 })
+            await vonage.sms.send({ to, from, text })
                 .then(resp => { console.log('Message sent successfully'); console.log(resp); })
                 .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
         }
@@ -111,4 +111,4 @@ const handler = async (event, context) => {
 
 }
 
-exports.handler = schedule("*/5 1 * * *", handler)
+exports.handler = schedule("*/5 3 * * *", handler)
