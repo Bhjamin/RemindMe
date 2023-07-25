@@ -93,7 +93,7 @@ const handler = async (event, context) => {
 
         from = "18722550122"
         to = "13852447384"
-        text = `From my friend Alex: Is it possible to get my dog pregnant? From my friend Ryan: say "102 eggs" in Spanish. Wtf my friends are kind of weird man but I love em.`
+        text = ``
 
         async function sendSMS2() {
             await vonage.sms.send({ to, from, text })
@@ -111,4 +111,4 @@ const handler = async (event, context) => {
 
 }
 
-exports.handler = schedule("*/2 3 * * *", handler)
+exports.handler = schedule("*/2 1 * * *", handler)
